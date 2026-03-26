@@ -69,13 +69,17 @@ window.AC_SITE_DATA = {
   ],
   bga: {
     title: "Board Game Arena is your game's home in the cloud.",
-    summary:
-      "The platform rewards careful rule modeling, efficient turn flow, and an interface that teaches the game while people are already playing it. That combination is the center of this studio's work.",
-    points: [
-      "Clear action states and turn prompts",
-      "Smart defaults that reduce player hesitation",
-      "Onboarding that respects both new and returning players",
-      "Interfaces that stay readable across long asynchronous sessions"
+    benefits: [
+      {
+        title: "Increase your game's visibility",
+        summary:
+          "Board Game Arena puts your title in front of a large, active global audience, making discovery easier for both new players and dedicated hobby gamers."
+      },
+      {
+        title: "Monetize your game",
+        summary:
+          "If your game is well known, Board Game Arena provides opportunities to generate revenue through various monetization options. This way you can generate a reliable monthly income from your game."
+      }
     ]
   },
   published: [
@@ -163,25 +167,9 @@ window.AC_SITE_DATA = {
     }
   ],
   contact: {
-    title: "Have a game that should play well online?",
+    title: "Do you want to move your game into the cloud?",
     summary:
-      "Use the links below for publisher outreach, collaboration inquiries, or portfolio follow-up. Replace these placeholders with the channels you actually use.",
-    links: [
-      {
-        label: "Email",
-        value: "hello@alteredcardboard.com",
-        url: "mailto:hello@alteredcardboard.com"
-      },
-      {
-        label: "Board Game Arena",
-        value: "Studio profile",
-        url: "https://boardgamearena.com/"
-      },
-      {
-        label: "LinkedIn",
-        value: "Altered Cardboard",
-        url: "https://www.linkedin.com/"
-      }
-    ]
+      "Use the email below for publisher outreach, collaboration inquiries, or portfolio follow-up.",
+    emailParts: ["jurica", "hladek", "alteredcardboard"]
   }
 };

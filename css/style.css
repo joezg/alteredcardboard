@@ -516,6 +516,29 @@ h2 {
   font-size: 1.45rem;
 }
 
+.bga-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+
+.bga-benefit-card {
+  padding: 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(252, 253, 253, 0.94), rgba(240, 245, 247, 0.88));
+  box-shadow: var(--shadow);
+}
+
+.bga-benefit-card h3 {
+  font-size: 1.8rem;
+}
+
+.bga-benefit-card p {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+}
+
 .link-list {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -639,16 +662,32 @@ h2 {
 
 .contact-card {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.1rem;
+  width: 100%;
+  max-width: none;
 }
 
 .contact-links {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.contact-email-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--highlight-deep);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.contact-email-link:hover,
+.contact-email-link:focus-visible {
+  color: var(--highlight);
+  outline: none;
 }
 
 .reveal {
@@ -666,6 +705,7 @@ h2 {
   .hero,
   .split-section,
   .process-grid,
+  .bga-benefits,
   .link-list,
   .project-grid {
     grid-template-columns: 1fr;

@@ -103,11 +103,22 @@
 
   const renderBga = () => {
     byId("bga-title").textContent = data.bga.title;
-    byId("bga-summary").textContent = data.bga.summary;
 
-    const pointRoot = byId("bga-points");
-    data.bga.points.forEach((point) => {
-      pointRoot.appendChild(create("li", null, point));
+    const benefitsRoot = byId("bga-benefits");
+    if (!benefitsRoot) {
+      return;
+    }
+
+    benefitsRoot.innerHTML = "";
+    const benefits = Array.isArray(data.bga.benefits) ? data.bga.benefits : [];
+
+    benefits.forEach((benefit) => {
+      const card = create("article", "bga-benefit-card reveal");
+      const heading = create("h3", null, benefit.title || "Benefit");
+      const summary = create("p", null, benefit.summary || "");
+
+      card.append(heading, summary);
+      benefitsRoot.appendChild(card);
     });
   };
 
@@ -252,15 +263,22 @@
     byId("contact-summary").textContent = data.contact.summary;
 
     const contactRoot = byId("contact-links");
-    data.contact.links.forEach((item) => {
-      const link = create("a", null, item.label + ": " + item.value);
-      link.href = item.url;
-      if (item.url.startsWith("http")) {
-        link.target = "_blank";
-        link.rel = "noreferrer";
-      }
-      contactRoot.appendChild(link);
-    });
+    const parts = data.contact.emailParts;
+    if (!Array.isArray(parts) || parts.length < 3) {
+      return;
+    }
+
+    const revealBtn = create("button", "button button-secondary contact-reveal-btn", "Show email address");
+    revealBtn.type = "button";
+
+    revealBtn.addEventListener("click", () => {
+      const address = parts[0] + "." + parts[1] + "+" + parts[2] + "@gmail.com";
+      const link = create("a", "contact-email-link", address);
+      link.href = "mailto:" + address;
+      contactRoot.replaceChild(link, revealBtn);
+    }, { once: true });
+
+    contactRoot.appendChild(revealBtn);
   };
 
   const setupNavigation = () => {
