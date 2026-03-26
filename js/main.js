@@ -1,5 +1,6 @@
 (function () {
   const data = window.AC_SITE_DATA;
+  const INITIAL_VISIBLE_PUBLISHED = 6;
 
   if (!data) {
     return;
@@ -91,8 +92,20 @@
 
   const renderPublished = () => {
     const publishedRoot = byId("published-list");
+    const publishedSection = byId("published");
 
-    data.published.forEach((item) => {
+    if (!publishedRoot) {
+      return;
+    }
+
+    const hiddenCards = [];
+
+    const existingActions = publishedSection ? publishedSection.querySelector(".published-actions") : null;
+    if (existingActions) {
+      existingActions.remove();
+    }
+
+    data.published.forEach((item, index) => {
       const card = create("article", "link-item reveal");
       if (item.previewId || item.placeholderTitle || item.placeholderImage) {
         const media = create("div", "link-media");
@@ -164,13 +177,49 @@
           metaList.appendChild(create("li", null, metaItem));
         });
         card.append(header, summary, metaList, link);
+
+        if (index >= INITIAL_VISIBLE_PUBLISHED) {
+          card.classList.add("is-collapsed");
+          hiddenCards.push(card);
+        }
+
         publishedRoot.appendChild(card);
         return;
       }
 
       card.append(header, summary, link);
+
+      if (index >= INITIAL_VISIBLE_PUBLISHED) {
+        card.classList.add("is-collapsed");
+        hiddenCards.push(card);
+      }
+
       publishedRoot.appendChild(card);
     });
+
+    if (hiddenCards.length === 0 || !publishedSection) {
+      return;
+    }
+
+    const actions = create("div", "published-actions");
+    const toggle = create("button", "button button-secondary", "Show more");
+    toggle.type = "button";
+    toggle.setAttribute("aria-expanded", "false");
+
+    toggle.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      const nextExpanded = !expanded;
+
+      hiddenCards.forEach((card) => {
+        card.classList.toggle("is-collapsed", !nextExpanded);
+      });
+
+      toggle.setAttribute("aria-expanded", String(nextExpanded));
+      toggle.textContent = nextExpanded ? "Show less" : "Show more";
+    });
+
+    actions.appendChild(toggle);
+    publishedSection.appendChild(actions);
   };
 
   const renderContact = () => {

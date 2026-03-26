@@ -467,6 +467,10 @@ h2 {
   padding: 1.35rem;
 }
 
+.link-item.is-collapsed {
+  display: none !important;
+}
+
 .link-media {
   display: flex;
   width: 100%;
@@ -554,6 +558,12 @@ h2 {
 
 .published-meta li {
   font-size: 0.84rem;
+}
+
+.published-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.35rem;
 }
 
 .contact-section {
