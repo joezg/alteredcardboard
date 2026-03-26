@@ -17,9 +17,27 @@ window.AC_SITE_DATA = {
   },
   about: {
     title: "A team dedicated to shiny and playful digital board game adaptations.",
-    paragraphs: [
-      "Altered Cardboard turns tabletop systems into reliable, elegant digital play spaces. The goal is not just mechanical accuracy, but a version of the game that feels natural to learn, clear to interact with, and robust enough for repeated online play.",
-      "This scaffold is content-driven by design. Company copy can be updated here, projects can be added below, and the page layout stays intact while the portfolio grows."
+    members: [
+      {
+        name: "Jurica",
+        photoPlaceholder: "Photo placeholder",
+        aboutPlaceholder: [
+            "Highly experienced full-stack developer.",
+            "Before starting freelance BGA development, Jurica worked as a Game Development Manager in internal BGA team.",
+            "He understands the ins-and-outs of the BGA platform and their processes.",
+            "He can help you navigate the complexities of BGA development and ensure your game shines on their platform."
+        ]
+      },
+      {
+        name: "Goran",
+        photoPlaceholder: "Photo placeholder",
+        aboutPlaceholder: [
+            "A brilliand front-end developer",
+            "He will make your game shine and ensure that players enjoy playing it.",
+            "Goran undestands that player experience is key to a successful digital adaptation.",
+            "He will make the adaptation both intuitive and highly satisfying. Possibly even addictive."
+        ]
+      }
     ]
   },
   process: [

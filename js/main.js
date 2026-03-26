@@ -58,8 +58,29 @@
     byId("about-title").textContent = data.about.title;
 
     const aboutRoot = byId("about-copy");
-    data.about.paragraphs.forEach((paragraph) => {
-      aboutRoot.appendChild(create("p", null, paragraph));
+    if (!aboutRoot) {
+      return;
+    }
+
+    aboutRoot.innerHTML = "";
+    aboutRoot.classList.add("team-grid");
+
+    const members = Array.isArray(data.about.members) ? data.about.members : [];
+    members.forEach((member) => {
+      const card = create("article", "team-card");
+      const photo = create("div", "team-photo-placeholder", member.photoPlaceholder || "Photo placeholder");
+      const name = create("h3", "team-name", member.name || "Team member");
+      const about = create("div", "team-about");
+      const aboutEntries = Array.isArray(member.aboutPlaceholder)
+        ? member.aboutPlaceholder
+        : [member.aboutPlaceholder || "About placeholder"];
+
+      aboutEntries.forEach((entry) => {
+        about.appendChild(create("p", null, entry));
+      });
+
+      card.append(photo, name, about);
+      aboutRoot.appendChild(card);
     });
   };
 
