@@ -55,56 +55,6 @@ window.AC_SITE_DATA = {
       "Interfaces that stay readable across long asynchronous sessions"
     ]
   },
-  projects: [
-    {
-      title: "Flagship Adaptation",
-      subtitle: "Complex rules, calm interface",
-      status: "Featured",
-      role: "Implementation, interface design, rules modeling",
-      description:
-        "Use this slot for a headline project with a short explanation of what made the implementation difficult and what the final player experience achieved.",
-      url: "#contact",
-      linkLabel: "Replace with case study or game link",
-      palette: ["#53636c", "#36434a"],
-      tags: ["Board Game Arena", "Production", "UI/UX"]
-    },
-    {
-      title: "Publisher Collaboration",
-      subtitle: "From prototype to online table",
-      status: "In production",
-      role: "Technical direction, digital adaptation",
-      description:
-        "Use this slot for a collaboration story: what the publisher needed, what platform constraints mattered, and how the implementation served the tabletop design.",
-      url: "#contact",
-      linkLabel: "Replace with project detail",
-      palette: ["#667b85", "#3f505a"],
-      tags: ["Publisher Work", "Rules Engine", "Frontend"]
-    },
-    {
-      title: "Fast Tactical Title",
-      subtitle: "Short turns, strong clarity",
-      status: "Released",
-      role: "Interaction design, implementation, testing",
-      description:
-        "Use this slot for a lighter, faster game where responsiveness, action feedback, and reduced cognitive load were the main differentiators.",
-      url: "#published",
-      linkLabel: "Jump to published links",
-      palette: ["#8b9aa3", "#53636c"],
-      tags: ["Released", "Accessibility", "Playtesting"]
-    },
-    {
-      title: "Deep Strategy Port",
-      subtitle: "Readable state, advanced depth",
-      status: "Showcase",
-      role: "State design, interface systems",
-      description:
-        "Use this slot for a heavier design where information density matters and the digital layout needed to reveal complex state without overwhelming the player.",
-      url: "#contact",
-      linkLabel: "Replace with project detail",
-      palette: ["#36434a", "#24313a"],
-      tags: ["Strategy", "Information Design", "BGA"]
-    }
-  ],
   published: [
     {
       title: "Massive-Verse: Fighting Card Game",
@@ -127,6 +77,16 @@ window.AC_SITE_DATA = {
       placeholderImage: "assets/images/andromedas-edge-alpha.png",
       placeholderTitle: "Andromeda's Edge (Alpha)",
       placeholderNote: "Replace this file with a newer screenshot when needed."
+    },
+    {
+      title: "7 Wonders: Edifice",
+      type: "Board Game Arena",
+      summary:
+        "7 Wonders with the Edifice expansion, where players can collaborate or compete around shared construction projects while balancing military, science, and civic plans.",
+      url: "https://en.boardgamearena.com/gamepanel?game=sevenwonders",
+      linkLabel: "Open on BGA",
+      meta: ["3-7 players", "6 min", "Drafting + expansion"],
+      previewId: 1131
     },
     {
       title: "Railroad Ink",

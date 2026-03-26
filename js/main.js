@@ -27,7 +27,24 @@
     }
 
     const statsRoot = byId("hero-stats");
-    data.hero.stats.forEach((item) => {
+    if (!statsRoot) {
+      return;
+    }
+
+    const publishedCount = Array.isArray(data.published) ? data.published.length : 0;
+    const stats = data.hero.stats.map((item) => {
+      if (/implementation/i.test(item.label)) {
+        return {
+          label: item.label,
+          value: String(publishedCount)
+        };
+      }
+
+      return item;
+    });
+
+    statsRoot.innerHTML = "";
+    stats.forEach((item) => {
       const wrapper = create("div");
       const dt = create("dt", null, item.label);
       const dd = create("dd", null, item.value);
@@ -42,46 +59,6 @@
     const aboutRoot = byId("about-copy");
     data.about.paragraphs.forEach((paragraph) => {
       aboutRoot.appendChild(create("p", null, paragraph));
-    });
-  };
-
-  const renderProjects = () => {
-    const projectRoot = byId("projects-grid");
-
-    data.projects.forEach((project) => {
-      const article = create("article", "project-card reveal");
-      const visual = create("div", "project-visual");
-      const badge = create("span", "project-badge", project.subtitle);
-      const title = create("h3", "project-title", project.title);
-
-      visual.style.setProperty("--card-start", project.palette[0]);
-      visual.style.setProperty("--card-end", project.palette[1]);
-      visual.append(badge, title);
-
-      const copy = create("div", "project-copy");
-      const meta = create("div", "project-meta");
-      const role = create("p", "project-role", project.role);
-      const status = create("span", "project-status", project.status);
-
-      meta.append(role, status);
-      copy.append(meta, create("p", null, project.description));
-
-      const tags = create("ul", "project-tags");
-      project.tags.forEach((tag) => {
-        tags.appendChild(create("li", null, tag));
-      });
-      copy.appendChild(tags);
-
-      const link = create("a", "project-link", project.linkLabel + " ->");
-      link.href = project.url;
-      if (project.url.startsWith("http")) {
-        link.target = "_blank";
-        link.rel = "noreferrer";
-      }
-      copy.appendChild(link);
-
-      article.append(visual, copy);
-      projectRoot.appendChild(article);
     });
   };
 
@@ -281,7 +258,6 @@
 
   renderHero();
   renderAbout();
-  renderProjects();
   renderProcess();
   renderBga();
   renderPublished();
