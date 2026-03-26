@@ -68,7 +68,16 @@
     const members = Array.isArray(data.about.members) ? data.about.members : [];
     members.forEach((member) => {
       const card = create("article", "team-card");
-      const photo = create("div", "team-photo-placeholder", member.photoPlaceholder || "Photo placeholder");
+      let photo;
+      if (member.photo) {
+        photo = document.createElement("img");
+        photo.className = "team-photo";
+        photo.src = member.photo;
+        photo.alt = (member.name || "Team member") + " portrait";
+        photo.loading = "lazy";
+      } else {
+        photo = create("div", "team-photo-placeholder", member.photoPlaceholder || "Photo placeholder");
+      }
       const name = create("h3", "team-name", member.name || "Team member");
       const about = create("div", "team-about");
       const aboutEntries = Array.isArray(member.aboutPlaceholder)
@@ -192,7 +201,16 @@
       const header = create("div", "link-item-header");
       const titleGroup = create("div");
       const title = create("h3", null, item.title);
-      const summary = create("p", null, item.summary);
+      const summary = create("div", "link-summary");
+      const summaryEntries = Array.isArray(item.summary)
+        ? item.summary
+        : [item.summary || ""];
+
+      summaryEntries
+        .filter((entry) => typeof entry === "string" && entry.trim() !== "")
+        .forEach((entry) => {
+          summary.appendChild(create("p", null, entry));
+        });
       const link = create("a", null, item.linkLabel + " ->");
 
       titleGroup.appendChild(title);

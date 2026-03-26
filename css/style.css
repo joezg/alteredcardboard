@@ -460,6 +460,16 @@ h2 {
   font-weight: 700;
 }
 
+.team-photo {
+  width: 100%;
+  min-height: 11rem;
+  border: 1px solid rgba(36, 49, 58, 0.14);
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  object-position: center 20%;
+  aspect-ratio: 4 / 3;
+}
+
 .team-name {
   font-size: 2rem;
 }
@@ -640,6 +650,14 @@ h2 {
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.link-summary p {
+  margin: 0;
+}
+
+.link-summary p + p {
+  margin-top: 0.45rem;
 }
 
 .published-meta {
