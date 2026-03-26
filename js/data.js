@@ -42,24 +42,29 @@ window.AC_SITE_DATA = {
   },
   process: [
     {
-      title: "Read the game",
+      title: "Understand the game",
       summary:
-        "Map the original rules, edge cases, timing windows, and player expectations before a single interface decision is made."
+        "Thoroughly understand the rules, edge cases, game flow, and player expectations before a single interface decision is made."
+    },
+    {
+      title: "Model the components",
+      summary:
+        "Break down the game into its core components, understanding how each piece interacts and contributes to the overall experience."
     },
     {
       title: "Shape the interaction",
       summary:
-        "Turn physical actions into digital affordances that remain legible under pressure and intuitive for first-time players."
+        "Turn physical actions into digital interactions where pieces move themselves, rules are enforced automatically, and players can focus entirely on strategy instead of bookkeeping."
     },
     {
-      title: "Build for live play",
+      title: "Polish the experience",
       summary:
-        "Implement for speed, clarity, and replayability with production constraints, asynchronous turns, and browser realities in mind."
+        "Iterate until the game feels genuinely satisfying to play — snappy feedback, smooth animations, and a natural flow so that players simply enjoy the game."
     },
     {
-      title: "Refine with feedback",
+      title: "Improve through feedback",
       summary:
-        "Polish onboarding, reduce ambiguity, and tighten edge-case handling until the digital version disappears behind the game itself."
+        "Player and publisher feedback is taken seriously. Reported issues get fixed, rough edges get smoothed, and the implementation keeps improving as long as the game is live."
     }
   ],
   bga: {
