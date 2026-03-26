@@ -489,11 +489,20 @@ h2 {
 }
 
 .process-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .process-card {
+  grid-column: span 2;
   padding: 1.35rem;
+}
+
+.process-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.process-card:nth-child(5) {
+  grid-column: 4 / span 2;
 }
 
 .process-index {
@@ -671,7 +680,19 @@ h2 {
     padding-top: 3.5rem;
   }
 
-  .process-grid,
+  .process-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .process-card {
+    grid-column: span 2;
+  }
+
+  .process-card:nth-child(4),
+  .process-card:nth-child(5) {
+    grid-column: span 2;
+  }
+
   .link-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

@@ -68,7 +68,7 @@ window.AC_SITE_DATA = {
     }
   ],
   bga: {
-    title: "Board Game Arena is where friction becomes visible.",
+    title: "Board Game Arena is your game's home in the cloud.",
     summary:
       "The platform rewards careful rule modeling, efficient turn flow, and an interface that teaches the game while people are already playing it. That combination is the center of this studio's work.",
     points: [
