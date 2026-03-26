@@ -16,7 +16,7 @@ window.AC_SITE_DATA = {
     ]
   },
   about: {
-    title: "A studio built around digital board game adaptation.",
+    title: "A team dedicated to shiny and playful digital board game adaptations.",
     paragraphs: [
       "Altered Cardboard turns tabletop systems into reliable, elegant digital play spaces. The goal is not just mechanical accuracy, but a version of the game that feels natural to learn, clear to interact with, and robust enough for repeated online play.",
       "This scaffold is content-driven by design. Company copy can be updated here, projects can be added below, and the page layout stays intact while the portfolio grows."
