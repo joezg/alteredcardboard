@@ -25,7 +25,7 @@ window.AC_SITE_DATA = {
             "Highly experienced full-stack developer.",
             "Before starting freelance BGA development, Jurica worked as a Game Development Manager in internal BGA team.",
             "He understands the ins-and-outs of the BGA platform and their processes and will help you navigate the complexities of BGA development.",
-            "He will ensure that the game flow if smooth and rules are perfectly implemented."
+            "He will ensure that the game flow is smooth and rules are perfectly implemented."
         ]
       },
       {
