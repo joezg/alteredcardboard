@@ -119,6 +119,16 @@ window.AC_SITE_DATA = {
       previewId: 58
     },
     {
+      title: "Decrypto (improvements)",
+      type: "Board Game Arena",
+      summary:
+        "A team word game of coded clues and intercepted messages where each round balances clear communication with deliberate misdirection.",
+      url: "https://en.boardgamearena.com/gamepanel?game=decrypto",
+      linkLabel: "Open on BGA",
+      meta: ["4-8 players", "42 min", "Team word game"],
+      previewId: 1771
+    },
+    {
       title: "Quetzal",
       type: "Board Game Arena",
       summary:
