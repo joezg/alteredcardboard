@@ -147,12 +147,11 @@
       const header = create("div", "link-item-header");
       const titleGroup = create("div");
       const title = create("h3", null, item.title);
-      const type = create("span", "link-type", item.type);
       const summary = create("p", null, item.summary);
       const link = create("a", null, item.linkLabel + " ->");
 
       titleGroup.appendChild(title);
-      header.append(titleGroup, type);
+      header.append(titleGroup);
       link.href = item.url;
       if (item.url.startsWith("http")) {
         link.target = "_blank";
