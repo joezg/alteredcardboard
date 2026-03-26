@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Altered Cardboard | Digital Board Game Implementations</title>
+    <meta
+      name="description"
+      content="Altered Cardboard creates polished digital board game implementations for Board Game Arena and beyond."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar" id="top">
+        <a class="brand" href="#hero" aria-label="Altered Cardboard home">
+          <img class="brand-logo" src="assets/images/ACLogoFancy.png" alt="Altered Cardboard" />
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#process">Process</a>
+          <a href="#bga">BGA Focus</a>
+          <a href="#published">Published Games</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero section" id="hero">
+          <div class="hero-copy">
+            <p class="eyebrow" id="hero-eyebrow"></p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects">See the work</a>
+              <a class="button button-secondary" href="#contact">Start a conversation</a>
+            </div>
+
+            <dl class="hero-stats" id="hero-stats"></dl>
+          </div>
+
+          <aside class="hero-panel" aria-label="Studio highlights">
+            <div class="panel-kicker">What Altered Cardboard does</div>
+            <div class="panel-card">
+              <img
+                class="panel-logo"
+                src="assets/images/ACLogoWhite.png"
+                alt="Altered Cardboard logo"
+              />
+              <p>
+                Production-minded digital implementations that respect the original design,
+                teach cleanly, and feel natural on Board Game Arena.
+              </p>
+              <ul class="bullet-list" id="hero-bullets"></ul>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section" id="projects">
+          <div class="section-heading">
+            <p class="eyebrow">Selected Work</p>
+            <h2>Recent implementations and showcase pieces</h2>
+            <p>
+              The cards below are rendered from a data file so adding a new game does not require
+              touching the page structure.
+            </p>
+          </div>
+
+          <div class="project-grid" id="projects-grid"></div>
+        </section>
+
+        <section class="section split-section" id="about">
+          <div class="section-heading compact">
+            <p class="eyebrow">About</p>
+            <h2 id="about-title"></h2>
+          </div>
+
+          <div class="prose-card" id="about-copy"></div>
+        </section>
+
+        <section class="section" id="process">
+          <div class="section-heading">
+            <p class="eyebrow">Process</p>
+            <h2>How the work moves from physical design to digital play</h2>
+          </div>
+
+          <div class="process-grid" id="process-grid"></div>
+        </section>
+
+        <section class="section split-section bga-section" id="bga">
+          <div class="section-heading compact">
+            <p class="eyebrow">Board Game Arena</p>
+            <h2 id="bga-title"></h2>
+          </div>
+
+          <div class="bga-card">
+            <p id="bga-summary"></p>
+            <ul class="feature-list" id="bga-points"></ul>
+          </div>
+        </section>
+
+        <section class="section" id="published">
+          <div class="section-heading">
+            <p class="eyebrow">Published Games</p>
+            <h2>Live links and released implementations</h2>
+            <p>
+              Use this section for games already available to play, external press mentions, or
+              portfolio links.
+            </p>
+          </div>
+
+          <div class="link-list" id="published-list"></div>
+        </section>
+
+        <section class="section contact-section" id="contact">
+          <div class="section-heading compact">
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title"></h2>
+          </div>
+
+          <div class="contact-card">
+            <p id="contact-summary"></p>
+            <div class="contact-links" id="contact-links"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
