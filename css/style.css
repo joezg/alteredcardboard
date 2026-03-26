@@ -135,17 +135,16 @@ img {
 
 .hero {
   display: grid;
-  grid-template-columns: 1.25fr 0.9fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
   align-items: stretch;
-  min-height: calc(100vh - 8rem);
-  padding-top: 5rem;
+  padding-top: 4.2rem;
 }
 
 .hero-copy {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1.2rem;
 }
 
@@ -273,52 +272,11 @@ h2 {
   font-size: 1.8rem;
 }
 
-.hero-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.panel-kicker {
-  color: var(--muted);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-}
-
 .panel-card,
 .prose-card,
 .bga-card,
 .contact-card {
   padding: 1.6rem;
-}
-
-.panel-card {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(155deg, #4c5d67 0%, #36434a 65%, #2b353b 100%);
-  color: rgba(248, 251, 252, 0.92);
-}
-
-.panel-card::before {
-  position: absolute;
-  inset: auto -1.5rem -1.75rem auto;
-  width: 9rem;
-  height: 9rem;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(248, 251, 252, 0.18), transparent 66%);
-  content: "";
-}
-
-.panel-logo {
-  width: min(100%, 15rem);
-  margin-bottom: 1rem;
-}
-
-.panel-card p {
-  position: relative;
-  color: rgba(248, 251, 252, 0.8);
 }
 
 .bullet-list,
@@ -340,11 +298,6 @@ h2 {
   background: rgba(83, 99, 108, 0.1);
   color: var(--ink);
   font-size: 0.92rem;
-}
-
-.panel-card .bullet-list li {
-  background: rgba(248, 251, 252, 0.12);
-  color: #f8fafb;
 }
 
 .section-heading {

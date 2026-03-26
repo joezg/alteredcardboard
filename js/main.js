@@ -34,11 +34,6 @@
       wrapper.append(dt, dd);
       statsRoot.appendChild(wrapper);
     });
-
-    const bulletRoot = byId("hero-bullets");
-    data.hero.bullets.forEach((item) => {
-      bulletRoot.appendChild(create("li", null, item));
-    });
   };
 
   const renderAbout = () => {
