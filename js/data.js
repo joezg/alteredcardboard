@@ -107,28 +107,66 @@ window.AC_SITE_DATA = {
   ],
   published: [
     {
-      title: "Published Game Placeholder",
+      title: "Massive-Verse: Fighting Card Game",
       type: "Board Game Arena",
       summary:
-        "Replace this with a live implementation, public announcement, or portfolio link once available.",
-      url: "https://boardgamearena.com/",
-      linkLabel: "Open Board Game Arena"
+        "A compact super-powered duel built around timing windows, hand management, and finishing the opponent with either damage or a precise Execute.",
+      url: "https://en.boardgamearena.com/gamepanel?game=massiveverse",
+      linkLabel: "Open on BGA",
+      meta: ["2 players", "8 min", "Card battler"],
+      previewId: 2403
     },
     {
-      title: "Press or Announcement Link",
-      type: "Article",
+      title: "Andromeda's Edge",
+      type: "Board Game Arena",
       summary:
-        "Use this for launch announcements, publisher news, blog posts, or interviews that support the portfolio.",
-      url: "https://example.com/",
-      linkLabel: "Replace with external article"
+        "Factions clash on the edge of the galaxy!",
+      url: "#published",
+      linkLabel: "Currently in alpha - not public yet",
+      meta: ["2-5 players", "60 min", "Worker placement"],
+      placeholderImage: "assets/images/andromedas-edge-alpha.png",
+      placeholderTitle: "Andromeda's Edge (Alpha)",
+      placeholderNote: "Replace this file with a newer screenshot when needed."
     },
     {
-      title: "Studio Profile",
-      type: "Portfolio",
+      title: "Railroad Ink",
+      type: "Board Game Arena",
       summary:
-        "Use this slot for a profile page, publisher partner page, or a deeper case study hosted elsewhere.",
-      url: "https://example.com/",
-      linkLabel: "Replace with portfolio link"
+        "A fast roll-and-write about drawing railways and roads, connecting exits, and balancing ambitious routes against dead ends.",
+      url: "https://en.boardgamearena.com/gamepanel?game=railroadink",
+      linkLabel: "Open on BGA",
+      meta: ["1-12 players", "7 min", "Roll & write"],
+      previewId: 1372
+    },
+    {
+      title: "Mr. Jack",
+      type: "Board Game Arena",
+      summary:
+        "An asymmetric two-player deduction game where one player hides Jack's identity and the other narrows the suspect list through movement and visibility.",
+      url: "https://en.boardgamearena.com/gamepanel?game=mrjack",
+      linkLabel: "Open on BGA",
+      meta: ["2 players", "16 min", "Deduction"],
+      previewId: 1236
+    },
+    {
+      title: "Perudo",
+      type: "Board Game Arena",
+      summary:
+        "A classic bluffing dice game of escalating bids, risk, and table reads, listed on BGA under the game slug used for Dudo.",
+      url: "https://en.boardgamearena.com/gamepanel?game=dudo",
+      linkLabel: "Open on BGA",
+      meta: ["2-6 players", "12 min", "Bluffing dice"],
+      previewId: 58
+    },
+    {
+      title: "Quetzal",
+      type: "Board Game Arena",
+      summary:
+        "A worker-placement expedition about assigning meeple dice, collecting artifacts, and timing deliveries for upgrades and points.",
+      url: "https://en.boardgamearena.com/gamepanel?game=quetzal",
+      linkLabel: "Open on BGA",
+      meta: ["2-5 players", "39 min", "Worker placement"],
+      previewId: 1247
     }
   ],
   contact: {

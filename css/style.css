@@ -281,7 +281,8 @@ h2 {
 
 .bullet-list,
 .feature-list,
-.project-tags {
+.project-tags,
+.published-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
@@ -292,7 +293,8 @@ h2 {
 
 .bullet-list li,
 .feature-list li,
-.project-tags li {
+.project-tags li,
+.published-meta li {
   padding: 0.55rem 0.85rem;
   border-radius: 999px;
   background: rgba(83, 99, 108, 0.1);
@@ -465,6 +467,81 @@ h2 {
   padding: 1.35rem;
 }
 
+.link-media {
+  display: flex;
+  width: 100%;
+  min-height: 0;
+  padding: 0.2rem 0 0.85rem;
+}
+
+.link-video-preview {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 62.5%;
+  overflow: hidden;
+  border: 1px solid rgba(36, 49, 58, 0.08);
+  border-radius: calc(var(--radius-md) + 2px);
+  background: linear-gradient(180deg, #d9e1e6, #c6d2d8);
+}
+
+.link-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.link-video-placeholder {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.45rem;
+  width: 100%;
+  min-height: 12rem;
+  padding: 1rem;
+  border: 1px dashed rgba(36, 49, 58, 0.22);
+  border-radius: calc(var(--radius-md) + 2px);
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.5), transparent 36%),
+    linear-gradient(135deg, #dbe3e8, #c7d3d9);
+}
+
+.link-video-placeholder.has-image {
+  justify-content: flex-start;
+  padding: 0;
+  overflow: hidden;
+  border-style: solid;
+}
+
+.link-placeholder-image {
+  width: 100%;
+  height: 100%;
+  min-height: 12rem;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.link-placeholder-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.8rem;
+  line-height: 0.95;
+}
+
+.link-placeholder-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.link-item h3 {
+  max-width: 12ch;
+  font-size: 2rem;
+}
+
 .link-item-header {
   display: flex;
   align-items: flex-start;
@@ -480,6 +557,14 @@ h2 {
   background: var(--highlight-soft);
   font-size: 0.84rem;
   font-weight: 700;
+}
+
+.published-meta {
+  margin-top: 0.1rem;
+}
+
+.published-meta li {
+  font-size: 0.84rem;
 }
 
 .contact-section {
@@ -575,6 +660,10 @@ h2 {
   .process-grid,
   .link-list {
     grid-template-columns: 1fr;
+  }
+
+  .link-media {
+    min-height: 0;
   }
 
   h1 {

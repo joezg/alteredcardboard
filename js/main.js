@@ -117,6 +117,56 @@
 
     data.published.forEach((item) => {
       const card = create("article", "link-item reveal");
+      if (item.previewId || item.placeholderTitle || item.placeholderImage) {
+        const media = create("div", "link-media");
+
+        if (item.previewId) {
+          const preview = document.createElement("div");
+          preview.className = "link-video-preview";
+
+          const video = document.createElement("video");
+          video.className = "link-video";
+          video.autoplay = true;
+          video.loop = true;
+          video.muted = true;
+          video.playsInline = true;
+          video.preload = "metadata";
+          video.setAttribute("aria-label", item.title + " preview video");
+
+          const webmSource = document.createElement("source");
+          webmSource.src = "https://x.boardgamearena.net/data/gamepreviews/" + item.previewId + "/en-w640.webm";
+          webmSource.type = "video/webm";
+
+          const mp4Source = document.createElement("source");
+          mp4Source.src = "https://x.boardgamearena.net/data/gamepreviews/" + item.previewId + "/en-w640.mp4";
+          mp4Source.type = "video/mp4";
+
+          video.append(webmSource, mp4Source);
+          preview.appendChild(video);
+          media.appendChild(preview);
+        } else {
+          const placeholder = create("div", "link-video-placeholder");
+
+          if (item.placeholderImage) {
+            placeholder.classList.add("has-image");
+            const image = document.createElement("img");
+            image.className = "link-placeholder-image";
+            image.src = item.placeholderImage;
+            image.alt = item.title + " screenshot";
+            image.loading = "lazy";
+            placeholder.appendChild(image);
+          } else {
+            const title = create("span", "link-placeholder-title", item.placeholderTitle || "Preview Coming Soon");
+            const note = create("span", "link-placeholder-note", item.placeholderNote || "Add screenshot later.");
+            placeholder.append(title, note);
+          }
+
+          media.appendChild(placeholder);
+        }
+
+        card.appendChild(media);
+      }
+
       const header = create("div", "link-item-header");
       const titleGroup = create("div");
       const title = create("h3", null, item.title);
@@ -127,8 +177,20 @@
       titleGroup.appendChild(title);
       header.append(titleGroup, type);
       link.href = item.url;
-      link.target = "_blank";
-      link.rel = "noreferrer";
+      if (item.url.startsWith("http")) {
+        link.target = "_blank";
+        link.rel = "noreferrer";
+      }
+
+      if (Array.isArray(item.meta) && item.meta.length > 0) {
+        const metaList = create("ul", "published-meta");
+        item.meta.forEach((metaItem) => {
+          metaList.appendChild(create("li", null, metaItem));
+        });
+        card.append(header, summary, metaList, link);
+        publishedRoot.appendChild(card);
+        return;
+      }
 
       card.append(header, summary, link);
       publishedRoot.appendChild(card);
