@@ -471,6 +471,13 @@ h2 {
   display: none !important;
 }
 
+.link-item-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: auto;
+}
+
 .link-media {
   display: flex;
   width: 100%;
@@ -553,7 +560,7 @@ h2 {
 }
 
 .published-meta {
-  margin-top: 0.1rem;
+  margin-top: 0;
 }
 
 .published-meta li {

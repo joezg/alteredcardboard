@@ -172,11 +172,13 @@
       }
 
       if (Array.isArray(item.meta) && item.meta.length > 0) {
+        const footer = create("div", "link-item-footer");
         const metaList = create("ul", "published-meta");
         item.meta.forEach((metaItem) => {
           metaList.appendChild(create("li", null, metaItem));
         });
-        card.append(header, summary, metaList, link);
+        footer.append(metaList, link);
+        card.append(header, summary, footer);
 
         if (index >= INITIAL_VISIBLE_PUBLISHED) {
           card.classList.add("is-collapsed");
@@ -187,7 +189,9 @@
         return;
       }
 
-      card.append(header, summary, link);
+      const footer = create("div", "link-item-footer");
+      footer.appendChild(link);
+      card.append(header, summary, footer);
 
       if (index >= INITIAL_VISIBLE_PUBLISHED) {
         card.classList.add("is-collapsed");
