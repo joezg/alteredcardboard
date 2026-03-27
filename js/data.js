@@ -23,7 +23,7 @@ window.AC_SITE_DATA = {
       },
       {
         name: "Goran",
-        photo: "assets/images/goran.jpeg",
+        photo: "assets/images/goran.png",
         photoPlaceholder: "Photo placeholder",
         aboutPlaceholder: [
             "A brilliant front-end developer.",
